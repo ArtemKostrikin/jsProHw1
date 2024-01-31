@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Информация о поварах и их специализации
+let chefsSpecialization = new Map([
+  ["Виктор", "Пицца"],
+  ["Ольга", "Суши"],
+  ["Дмитрий", "Десерты"]
+]);
+
+// Информация о блюдах и их поварах
+let dishes = new Map([
+  ["Пицца Маргарита", "Виктор"],
+  ["Пицца Пепперони", "Виктор"],
+  ["Суши Филадельфия", "Ольга"],
+  ["Суши Калифорния", "Ольга"],
+  ["Тирамису", "Дмитрий"],
+  ["Чизкейк", "Дмитрий"]
+]);
+
+// Заказы клиентов
+let orders = new Map();
+orders.set("Алексей", ["Пицца Пепперони", "Тирамису"]);
+orders.set("Мария", ["Суши Калифорния", "Пицца Маргарита"]);
+orders.set("Ирина", ["Чизкейк"]);
+
+// Проверка, какой повар готовит какое блюдо
+for (let [dish, chef] of dishes) {
+  console.log(`Повар ${chef} готовит блюдо: ${dish}`);
+}
+
+// Проверка, какие блюда заказал каждый клиент
+for (let [client, order] of orders) {
+  console.log(`Клиент ${client} заказал: ${order.join(", ")}`);
+}
+
+    </script>
+</body>
+</html>
